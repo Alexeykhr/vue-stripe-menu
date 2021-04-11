@@ -18,6 +18,7 @@ $vsm-arrow-border-radius: 4px 0 0 0 !default;
 $vsm-index: 1000 !default;
 $vsm-link-height: 50px !default;
 $vsm-link-padding-x: 25px !default;
+$vsm-link-container-justify: center !default;
 
 $vsm-background: #fff !default;
 $vsm-background-alt: #f6f9fc !default;
@@ -37,7 +38,7 @@ $vsm-shadow: 0 50px 100px -20px rgba(50, 50, 93, .25),
               0 -18px 60px -10px rgba(0, 0, 0, .025) !default;
 
 // Adaptive design
-$vsm-media: 768px;
+$vsm-media: 768px !default;
 
 /* -----------------------------------------------------------------------------
  * - Mobile Component -

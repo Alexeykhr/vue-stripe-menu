@@ -53,6 +53,9 @@
 }
 
 .vsm-link-container {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: $vsm-link-container-justify;
   > * {
     // Remove user agent from all tags (a, button, span, etc)
     font: inherit;

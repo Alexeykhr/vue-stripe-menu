@@ -105,7 +105,7 @@ Add css/scss styles:
 
 @import "~vue-stripe-menu/src/scss/index";
 
-// >>> CSS style <<<
+// >>> CSS style (variable overrides are not available) <<<
 // @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
 
 .vsm-menu {
@@ -323,7 +323,7 @@ export default {
 | ------------ | ---------------------------------- |
 | vsm-mob-show | Show HTMLElements in mobile design |
 | vsm-mob-hide | Hide HTMLElements in mobile design |
-| vsm-mob-full | Add "flex-grow: 1" styles          |
+| vsm-mob-full | Add "flex-grow: 1" style           |
 
 ## Contributing
 

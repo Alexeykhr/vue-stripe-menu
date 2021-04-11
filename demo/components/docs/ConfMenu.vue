@@ -94,18 +94,18 @@ export default {
       generalStyles: [
         { property: 'header max-width', value: null, initial: '1024px', desc: 'for vsm-menu, empty - no styles', handler: (val) => val && `.vsm-menu {\n  max-width: ${val};\n  width: 100%;\n  margin: 0 auto;\n}` },
         { property: 'header margin', value: null, initial: '0 10px', desc: 'for vsm-menu, empty - no styles', handler: (val) => val && `.vsm-nav {\n  margin: ${val};\n}` },
-        { property: 'link position', value: null, initial: 'center', desc: 'left/center/right, empty - no styles', handler: this.positionStyleHandler },
       ].map((item) => ({ ...item, value: item.initial })),
       vsmMenuStyles: [
-        { property: '$vsm-transform-content', value: null, initial: '150px', desc: 'how far the content moves (inside the dropdown)' },
+        { property: '$vsm-transform-content', value: null, initial: '150px', desc: 'how far the content moves (inside the dropdown, part of animation)' },
         { property: '$vsm-link-height', value: null, initial: '50px' },
+        { property: '$vsm-link-container-justify', value: null, initial: 'center', desc: 'link position - flex-start/center/flex-end' },
         { property: '$vsm-background', value: null, initial: '#fff', desc: 'background for first element' },
         { property: '$vsm-background-alt', value: null, initial: '#f6f9fc', desc: 'background from second element' },
         { property: '$vsm-color', value: null, initial: '#6772e5' },
         { property: '$vsm-color-hover', value: null, initial: '#32325d' },
         { property: '$vsm-transition', value: null, initial: '250ms', desc: 'animation speed in ms (equals "transition-timeout" props)', attrs: { disabled: true } },
         { property: '$vsm-link-padding-x', value: null, initial: '25px', desc: 'spacing between the links' },
-        { property: '$vsm-media', value: null, initial: '768px', desc: 'adaptive design, empty - no adaptive' },
+        { property: '$vsm-media', value: null, initial: '768px', desc: 'adaptive design, empty - no adaptive (doesn\'t change on this site)' },
       ].map((item) => ({ ...item, value: item.initial })),
       vsmMobStyles: [
         { property: '$vsm-mob-dropdown-offset', value: null, initial: '10px' },
@@ -158,7 +158,7 @@ export default {
 
       let result = `// >>> SCSS style (required sass-loader, node-sass) <<<\n// https://github.com/Alexeykhr/vue-stripe-menu/blob/master/src/scss/_variables.scss\n`
       result += `${overrideStyles ? `${overrideStyles}\n` : ''}`
-      result += `@import "~vue-stripe-menu/src/scss/index";\n\n// >>> CSS style <<<\n// @import 'vue-stripe-menu/dist/vue-stripe-menu.css';\n\n`
+      result += `@import "~vue-stripe-menu/src/scss/index";\n\n// >>> CSS style (variable overrides are not available) <<<\n// @import 'vue-stripe-menu/dist/vue-stripe-menu.css';\n\n`
       result += this.generalStylesString
 
       return result.trim()
@@ -185,25 +185,6 @@ export default {
     }
   },
   methods: {
-    positionStyleHandler(val) {
-      let position = ''
-
-      switch (val.trim()) {
-        case 'center':
-          position = 'center'
-          break
-        case 'left':
-          position = 'flex-start'
-          break
-        case 'right':
-          position = 'flex-end'
-          break
-        default:
-          return ''
-      }
-
-      return `.vsm-link-container {\n  display: flex;\n  flex: 1 1 auto;\n  justify-content: ${position};\n}`
-    },
     onChangeMenuProps() {
       const obj = this.vsmProps.reduce((result, item) => {
         if (item.value !== item.initial && (!item.validator || item.validator(item.value))) {

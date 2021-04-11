@@ -18,6 +18,6 @@ export const rows = [
   },
   {
     name: 'vsm-mob-full',
-    description: 'Add "flex-grow: 1" styles'
+    description: 'Add "flex-grow: 1" style'
   }
 ]
