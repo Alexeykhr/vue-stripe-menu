@@ -15,5 +15,9 @@ export const rows = [
   {
     name: 'vsm-mob-hide',
     description: 'Hide HTMLElements in mobile design'
+  },
+  {
+    name: 'vsm-mob-full',
+    description: 'Add "flex-grow: 1" styles'
   }
 ]

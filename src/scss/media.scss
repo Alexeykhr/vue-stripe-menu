@@ -1,0 +1,15 @@
+@import "variables";
+
+@if $vsm-media > 0 {
+  @media screen and (max-width: $vsm-media) {
+    .vsm-mob-show {
+      display: block !important;
+    }
+    .vsm-mob-hide {
+      display: none !important;
+    }
+    .vsm-mob-full {
+      flex-grow: 1;
+    }
+  }
+}

@@ -40,19 +40,6 @@ export default {
   // display: flex; // <-- default display removed
   // All override classes from .vsm-section
 }
-
-// Change 768px on your value from $vsm-media, if set
-@media screen and (max-width: 768px) {
-  .vsm-mob-show {
-    display: block;
-  }
-  .vsm-mob-hide {
-    display: none;
-  }
-  .vsm-mob-full {
-    flex-grow: 1;
-  }
-}
 ```
 
 - Change the code/styles according to the changes below

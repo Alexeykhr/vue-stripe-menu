@@ -101,6 +101,7 @@ Add css/scss styles:
 // >>> SCSS style (required sass-loader, node-sass) <<<
 // https://github.com/Alexeykhr/vue-stripe-menu/blob/master/src/scss/_variables.scss
 // $vsm-transition: .5s;
+// $vsm-media: 768px;
 
 @import "~vue-stripe-menu/src/scss/index";
 
@@ -121,18 +122,6 @@ Add css/scss styles:
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
-}
-
-@media screen and (max-width: 768px) {
-  .vsm-mob-show {
-    display: block;
-  }
-  .vsm-mob-hide {
-    display: none;
-  }
-  .vsm-mob-full {
-    flex-grow: 1;
-  }
 }
 ```
 
@@ -334,6 +323,7 @@ export default {
 | ------------ | ---------------------------------- |
 | vsm-mob-show | Show HTMLElements in mobile design |
 | vsm-mob-hide | Hide HTMLElements in mobile design |
+| vsm-mob-full | Add "flex-grow: 1" styles          |
 
 ## Contributing
 
